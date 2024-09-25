@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -12,12 +12,14 @@ export class UserComponent {
   @Input({ required: true }) avatar!: string; // This is inputted from the parent component which is the AppComponent
   @Input({ required: true }) name!: string; // This is inputted from the parent component which is the AppComponent
   @Output() select = new EventEmitter(); // This is emitted to the parent component which is the AppComponent
+  // select = output<string>(); // This is more modern way to define outputs, it is equivalent to the above line. 
 
   get imagePath() {
     return 'assets/users/' + this.avatar;
   }
 
   // This is the more modern way to define inputs.
+
   // avatar = input.required<string>();
   // name = input.required<string>();
 
