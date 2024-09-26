@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output, output } from '@angular/core';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input({ required: true }) id!: string;
+  @Input({ required: true }) id!: string; // This is inputted from the parent component which is the AppComponent
   @Input({ required: true }) avatar!: string; // This is inputted from the parent component which is the AppComponent
   @Input({ required: true }) name!: string; // This is inputted from the parent component which is the AppComponent
   @Output() select = new EventEmitter<string>(); // This is emitted to the parent component which is the AppComponent
