@@ -6,8 +6,10 @@
 
 <main>
     <ul id="users">
+         <!-- Track by user.id to avoid re-rendering of the component. This was released in Angular 7. Older versions used NgFor and NgIf -->
         @for (user of users; track user.id) {
-            <li>
+        
+            <li *ngFor="let user of users"> 
                 <app-user [user]="user" (select)="onSelectUser($event)" />
             </li>
         }
