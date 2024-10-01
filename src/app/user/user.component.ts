@@ -1,5 +1,19 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 
+// type User = { // A type is a way to define a type in TypeScript. It is used to define the structure of an object. 
+//   // It is different from an interface in that it can be used to define a union type, intersection type, and other types.
+//   id: string;
+//   avatar: string;
+//   name: string;
+// }
+
+
+interface User { // An interface is a way to define a type in TypeScript. It is used to define the structure of an object. 
+  id: string;
+  avatar: string;
+  name: string;
+}
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -8,11 +22,7 @@ import { Component, EventEmitter, Input, Output, output } from '@angular/core';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input({ required: true }) user!: {
-    id: string;
-    avatar: string;
-    name: string;
-  }
+  @Input({ required: true }) user!: User;
   // @Input({ required: true }) id!: string; // This is inputted from the parent component which is the AppComponent
   // @Input({ required: true }) avatar!: string; // This is inputted from the parent component which is the AppComponent
   // @Input({ required: true }) name!: string; // This is inputted from the parent component which is the AppComponent
