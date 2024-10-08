@@ -11,6 +11,7 @@ import { User } from './user.model';
 })
 export class UserComponent {
   @Input({ required: true }) user!: User; // This is inputted from the parent component which is the AppComponent
+  @Input({ required: true}) selected!: boolean;
   // @Input({ required: true }) id!: string; // This is inputted from the parent component which is the AppComponent
   // @Input({ required: true }) avatar!: string; // This is inputted from the parent component which is the AppComponent
   // @Input({ required: true }) name!: string; // This is inputted from the parent component which is the AppComponent
